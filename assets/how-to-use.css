@@ -1,0 +1,49 @@
+
+div.spacer {
+  height: 10vh;
+  display: block;
+}
+
+div.how-to-use__container {
+  display: block;
+}
+
+div.how-to-use__media__wrapper {
+  padding: 0px;
+  margin: 0px;
+  width: 100vw;
+}
+
+img.how-to-use__media {
+  width: 100vw;
+  height: 90vh;
+  object-fit: fill;
+}
+
+div.how-to-use__text-box {
+  margin: 0px;
+  opacity: 0.5;
+  padding: 2vw;
+  padding-left: 1vw;
+}
+
+.image-with-text__video {
+  display: flex;
+  align-items: center;
+  border-top: 0.5px solid rgba(62, 41, 7, 0.5);
+}
+
+.image-with-text__video video {
+  width: 100%;
+}
+
+
+@media only screen and (max-width: 750px) {
+  div.how-to-use__text-box {
+    margin: 0px;
+    opacity: 1;
+    padding: 2vw;
+    padding-left: 3.5vw;
+    padding-right: 3.5vw;
+  }
+}

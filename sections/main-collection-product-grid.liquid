@@ -1,0 +1,260 @@
+
+{{ 'collection_page.css' | asset_url | stylesheet_tag }}
+{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
+
+<style>
+@media only screen and (max-width: 750px) {
+  hr.footer__line {
+    margin-top: 15vh;
+  }
+}
+</style>
+
+<div class="collection__wrapper">
+  {%- for product in collection.products -%}
+    <div id="#productWrapper" class="individual__product__wrapper">
+      <a href="{{ product.url}}">
+        {% for image in product.images limit: 1 %}
+          {% if product.metafields.custom.hero_image != blank %}
+          <div class="image__container"
+               style="background-image: url({{ product.metafields.custom.hero_image | img_url: '1200x1200' }})"
+          >
+            <img class="featured__image"
+                 src="{{ image.src | img_url: '1200x1200' }}"
+                 onmouseover="this.style.opacity='0';"
+                 onmouseout="this.style.opacity='1'"
+                 alt="{{product.metafields.custom.hero_image.alt}}"
+            />
+          </div>
+          {% elsif product.metafields.custom.hero_image == blank %}
+          <div class="image__container">
+            <img class="featured__image" src="{{ image.src | img_url: '1200x1200' }}" alt="{{product.featured_image.alt}}" alt="" />
+          </div>
+          {% endif %}
+        {% endfor %}
+      </a>
+      <div class="product__text">
+        <a class="product__text__titles">{{ product.title }}</a>
+        <div class="dots_price_wrapper">
+          <div class="variant_dot_holder">
+          {% for variant in product.variants %}
+            {% assign color = variant.metafields.custom.color %}
+              {% if color != blank %}
+                <div
+                     id="materialVariantDots"
+                     class="variant__color"
+                     for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                     style="background-color: {{variant.metafields.custom.color}};"
+                     >
+                </div>
+            {% endif %}
+          {% endfor %}
+          </div>
+          <a class="product__text__titles">{{ product.price | money_without_trailing_zeros }}</a>
+        </div>
+      </div>
+    </div>
+  {%- endfor -%}
+</div>
+
+
+<!-- {% if collections['skincare'].products.size > 3 %} -->
+  <div class=
+  "
+  collection__wrapper
+  {% if collection.products.size > 3 %}
+  second__row
+  {% endif %}
+  "
+  >
+    {%- for product in collection.products offset: 3 -%}
+      <div id="#productWrapper" class="individual__product__wrapper">
+        <a href="{{ product.url}}">
+          {% for image in product.images limit: 1 %}
+            {% if product.metafields.custom.hero_image != blank %}
+            <div class="image__container"
+                 style="background-image: url({{ product.metafields.custom.hero_image | img_url: '1200x1200' }})"
+            >
+              <img class="featured__image"
+                   src="{{ image.src | img_url: '1200x1200' }}"
+                   onmouseover="this.style.opacity='0';"
+                   onmouseout="this.style.opacity='1'"
+                   alt="{{product.metafields.custom.hero_image.alt}}"
+              />
+            </div>
+            {% elsif product.metafields.custom.hero_image == blank %}
+            <div class="image__container">
+              <img class="featured__image" src="{{ image.src | img_url: '1200x1200' }}" alt="{{product.featured_image.alt}}" alt="" />
+            </div>
+            {% endif %}
+          {% endfor %}
+        </a>
+        <div class="product__text">
+          <a class="product__text__titles">{{ product.title }}</a>
+          <div class="dots_price_wrapper">
+            <div class="variant_dot_holder">
+            {% for variant in product.variants %}
+              {% assign color = variant.metafields.custom.color %}
+                {% if color != blank %}
+                  <div
+                       id="materialVariantDots"
+                       class="variant__color"
+                       for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                       style="background-color: {{variant.metafields.custom.color}};"
+                       >
+                  </div>
+              {% endif %}
+            {% endfor %}
+            </div>
+            <a class="product__text__titles">{{ product.price | money_without_trailing_zeros }}</a>
+          </div>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+<!-- {%- elsif collections['accessories'].products.size > 3 -%}
+  <div class="collection__wrapper second__row">
+    {%- for product in collection.products offset: 3 -%}
+      <div id="#productWrapper" class="individual__product__wrapper">
+        <a href="{{ product.url}}">
+          {% for image in product.images limit: 1 %}
+            {% if product.metafields.custom.hero_image != blank %}
+            <div class="image__container"
+                 style="background-image: url({{ product.metafields.custom.hero_image | img_url: '1200x1200' }})"
+            >
+              <img class="featured__image"
+                   src="{{ image.src | img_url: '1200x1200' }}"
+                   onmouseover="this.style.opacity='0';"
+                   onmouseout="this.style.opacity='1'"
+                   alt="{{product.metafields.custom.hero_image.alt}}"
+              />
+            </div>
+            {% elsif product.metafields.custom.hero_image == blank %}
+            <div class="image__container">
+              <img class="featured__image" src="{{ image.src | img_url: '1200x1200' }}" alt="{{product.featured_image.alt}}" alt="" />
+            </div>
+            {% endif %}
+          {% endfor %}
+        </a>
+        <div class="product__text">
+          <a class="product__text__titles">{{ product.title }}</a>
+          <div class="dots_price_wrapper">
+            <div class="variant_dot_holder">
+            {% for variant in product.variants %}
+              {% assign color = variant.metafields.custom.color %}
+                {% if color != blank %}
+                  <div
+                       id="materialVariantDots"
+                       class="variant__color"
+                       for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                       style="background-color: {{variant.metafields.custom.color}};"
+                       >
+                  </div>
+              {% endif %}
+            {% endfor %}
+            </div>
+            <a class="product__text__titles">{{ product.price | money_without_currency }}</a>
+          </div>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div> -->
+<!-- {%- endif -%} -->
+
+<script src="{{ 'initalpage.js' | asset_url }}"></script>
+
+{% schema %}
+{
+  "name": "t:sections.main-collection-product-grid.name",
+  "class": "spaced-section collection-grid-section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 8,
+      "max": 24,
+      "step": 4,
+      "default": 16,
+      "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-collection-product-grid.settings.header__3.content"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__1.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__2.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__3.label"
+        }
+      ],
+      "default": "adapt",
+      "label": "t:sections.main-collection-product-grid.settings.image_ratio.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.show_secondary_image.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "add_image_padding",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.add_image_padding.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image_outline",
+      "default": true,
+      "label": "t:sections.main-collection-product-grid.settings.show_image_outline.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.show_vendor.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.show_rating.label",
+      "info": "t:sections.main-collection-product-grid.settings.show_rating.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-collection-product-grid.settings.header__1.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_filtering",
+      "default": true,
+      "label": "t:sections.main-collection-product-grid.settings.enable_filtering.label",
+      "info": "t:sections.main-collection-product-grid.settings.enable_filtering.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sorting",
+      "default": true,
+      "label": "t:sections.main-collection-product-grid.settings.enable_sorting.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "collapse_on_larger_devices",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.collapse_on_larger_devices.label"
+    }
+  ]
+}
+{% endschema %}

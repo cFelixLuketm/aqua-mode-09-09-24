@@ -1,0 +1,31 @@
+
+a.landing__page__link {
+  font-size: 0px;
+}
+
+div.image_template_two_wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+img.image_section_template_two {
+  width: 50vw;
+  height: 101vh;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+  z-index: -1;
+}
+
+@media (max-width: 700px) {
+  div.image_template_two_wrapper {
+    height: 36vh;
+    z-index: -1;
+    position: relative;
+  }
+  img.image_section_template_two {
+    height: 36vh;
+    /* width: 100vw; */
+  }
+}

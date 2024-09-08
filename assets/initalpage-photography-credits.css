@@ -1,0 +1,34 @@
+
+.credit__container {
+  position: absolute;
+  width: 98vw;
+  margin-left: 1.5vw;
+  margin-top: 101.5vh;
+  z-index: 11;
+}
+
+.credit__container.scrolled {
+  position: sticky;
+  width: 98vw;
+  margin-left: 1.5vw;
+  margin-top: 94vh;
+  z-index: 11;
+}
+
+p.credits__text {
+  font-size: 13px;
+}
+
+@media (max-width: 700px) {
+  .credit__container__mobile {
+    position: fixed;
+    z-index: 0;
+    margin-left: 2vw;
+    bottom: 1vh;
+    /* top: 90vh; */
+  }
+
+  p.credits__text {
+    line-height: 17px;
+  }
+}

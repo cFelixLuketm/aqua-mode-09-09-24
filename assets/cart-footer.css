@@ -1,0 +1,145 @@
+
+div.cart__footer__wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30vh;
+  position: relative;
+    z-index: 10;
+}
+
+div.cart__footer {
+  width: 40vw;
+  /* background-color: red; */
+}
+
+div.totals {
+  width: 40vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+div.shipping {
+  margin-top: 1.5vh;
+  width: 40vw;
+  display: flex;
+  justify-content: space-between;
+  cursor: default;
+}
+
+a.shipping__text {
+  color: #B9B3A5;
+  cursor: default;
+}
+
+div.cart__ctas {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+
+.buy__button__style {
+    width: 24vw;
+    height: 5vh;
+    margin: 0px;
+    background-color: #F5F5F5;
+    border-radius: 2.5px;
+    transition: 0.25s
+    font-family: "Untitled-sans";
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0rem;
+  }
+
+
+
+
+
+  div.add__to__cart__wrapper {
+    /* margin-top: 4vh; */
+    width: 24vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    transition: 0.25s;
+  }
+
+  .buy__button__style:hover {
+    background-color: #000000;
+    transition: 0.25s
+  }
+
+  span.product__button__text {
+    font-family: "Untitled-sans";
+    font-size: 13px;
+    color: #000000;
+    letter-spacing: 0rem;
+  }
+
+  .buy__button__style:hover span {
+    color: #ffffff;
+    transition: 0.25s
+  }
+
+
+  @media (max-width: 700px) {
+    div.cart__footer {
+      width: 90vw;
+    }
+
+    div.sub_ship__price {
+      position: fixed;
+      margin-left: -5vw;
+      height: 9vh;
+      z-index: 1000;
+      bottom: 7.5vh;
+      width: 100vw;
+      padding-top: 1.5vh;
+      background-color: white;
+      transition: 0.5s;
+    }
+
+    div.sub_ship__price.active {
+      transition: 0.25s;
+      bottom: -15vh;
+    }
+
+    .buy__button__style {
+        width: 100vw;
+        height: 7.5vh;
+        position: fixed;
+        bottom: 0px;
+        background-color: #000000;
+        z-index: 1000;
+        transition: 0.25s;
+        transition-delay: 0s;
+        border-radius: 0px;
+      }
+
+      .buy__button__style.active {
+          transition: 0.25s;
+          bottom: -7.5vh;
+          transition-delay: 0.25s;
+        }
+
+    div.totals {
+      width: 92vw;
+      margin-left: 4vw;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    div.shipping {
+      margin-top: 1.5vh;
+      width: 92vw;
+      margin-left: 4vw;
+      display: flex;
+      justify-content: space-between;
+      cursor: default;
+    }
+
+      span.product__button__text {
+        font-size: 14px;
+        color: #ffffff;
+      }
+  }

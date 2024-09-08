@@ -1,0 +1,143 @@
+
+@media only screen and (max-width: 750px) {
+
+  #productInformationField {
+    width: 100vw;
+    height: 100vh;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    left: 100vw;
+    z-index: 100;
+
+    top: 0vh;
+    left: 100vw;
+  }
+
+  #productInformationField.active {
+    left: 0vw;
+  }
+
+  .title__container__detail__slider {
+    width: 92vw;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5vh;
+  }
+
+  .product__info__span {
+     width: 96vw;
+     margin-top: 2vh;
+  }
+
+  img.size__guide__image {
+    width: 92vw;
+    margin-top: 3vh;
+    margin-bottom: 0vh;
+  }
+
+  .mobile__margin {
+    width: 92vw;
+  }
+
+  .mobile__touch {
+    pointer-events: all;
+  }
+
+}
+
+/*
+
+@media only screen and (max-width: 750px) {
+
+#productInformationField {
+  width: 50vw;
+  height: 100vh;
+  background-color: #ffffff;
+  position: fixed;
+  transition: 0.5s;
+  left: 100vw;
+
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+}
+
+#productInformationField.active {
+  left: 50vw;
+}
+
+  div.title__container {
+    position: absolute;
+    background-color: white;
+    width: 100vw;
+
+    width: 100vw;
+    height: 5vh;
+    transition: 0.25s;
+    position: fixed;
+    bottom: 1vh;
+    left: 0px;
+    z-index: 100;
+    padding: 10px;
+    padding-top: 15px;
+  }
+
+  #productInformationField {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    position: fixed;
+    transition: 0.5s;
+    left: 100vw;
+    top: 0px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    z-index: 50;
+  }
+
+  #productInformationField.active {
+    left: 0vw;
+  }
+
+  .title__container__detail__slider {
+    width: 85vw;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5vh;
+  }
+
+  div.project__info__contentr {
+    width: 85vw;
+    height: 25vh;
+    padding-left: 0vw;
+    background-color: yellow;
+  }
+
+  div.description__container {
+    width: 85vw;
+    margin-bottom: 5vh;
+  }
+
+  .product__info__span {
+     position: sticky;
+     transition: 350ms ease-in;
+     width: 85vw;
+     margin-top: 3vh;
+     display: inline-block;
+     vertical-align: middle;
+  }
+
+  p.about__body__text {
+    width: 85vw;
+    font-size: 13px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  img.size__guide__image {
+    width: 85vw;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+  }
+} */

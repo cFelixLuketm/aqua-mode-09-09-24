@@ -1,0 +1,577 @@
+
+{{ 'section-footer.css' | asset_url | stylesheet_tag }}
+
+
+<div class="footer__options__container" id="footerOptionsContainer">
+
+  <div class="footer_inmenu">
+    <div class="options__wrapper">
+      <a class="menu__items" href="/">DEL SOL SALON <span id="year"></span></a>
+    </div>
+    <div style="pointer-events:none;" class="options__wrapper middle middle_footer_menu">
+      <a href="#RefundsAndExchangesMobile" class="menu__items content__buttons">RETURNS & EXCHANGES</a>
+      <a href="#ShippingPolicyMobile" class="menu__items content__buttons">SHIPPING POLICY</a>
+      <a onclick="openTab(event, 'About')" class="menu__items content__buttons">ABOUT</a>
+      <a onclick="openTab(event, 'Contact')" class="menu__items content__buttons">CONTACT</a>
+      {% comment %} <a onclick="openTab(event, 'HowtoCare')" class="menu__items content__buttons">HOW TO CARE</a> {% endcomment %}
+    </div>
+    <div class="options__wrapper">
+      <div class="newsletter__footer footer_inmenu_newsletter">
+        <a class="menu__items content__buttons newsletter__header__mobile">NEWSLETTER</a>
+        {%- if section.settings.newsletter_enable -%}
+            {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form footer__form__post' -%}
+              <input type="hidden" name="contact[tags]" value="newsletter">
+              <div class="newsletter-form__field-wrapper footer__form">
+                <div class="field">
+                  <input
+                    id="NewsletterForm--{{ section.id }}"
+                    type="email"
+                    name="contact[email]"
+                    class="email_input"
+                    value="{{ form.email }}"
+                    aria-required="true"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    autocomplete="email"
+                    {% if form.errors %}
+                      autofocus
+                      aria-invalid="true"
+                      aria-describedby="ContactFooter-error"
+                    {% elsif form.posted_successfully? %}
+                      aria-describedby="ContactFooter-success"
+                    {% endif %}
+                    placeholder="{{ 'newsletter.label' | t }}"
+                    required
+                  >
+                  <button type="submit" class="newsletter-form__button field__button" name="commit" id="Subscribe" aria-label="{{ 'newsletter.button_label' | t }}">
+                    {% render 'icon-arrow' %}
+                  </button>
+                </div>
+                {%- if form.errors -%}
+                  <small class="newsletter-form__message form__message" id="ContactFooter-error">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
+                {%- endif -%}
+              </div>
+              {%- if form.posted_successfully? -%}
+                <h3 class="newsletter-form__message newsletter-form__message--success form__message" id="ContactFooter-success" tabindex="-1" autofocus>{% render 'icon-success' %}{{ 'newsletter.success' | t }}</h3>
+              {%- endif -%}
+            {%- endform -%}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  <!-- <button class="close__options__container menu__items" id="footerOptionsContainerCloseButton">CLOSE</button> -->
+    <div class="content__wrapper" id="RefundsAndExchanges">
+      <!-- <span>
+        <div> -->
+          <span class="footer__titles__wrapper">
+            <a class="product__title"><span id="mobileDot"> • </span>RETURNS & EXCHANGES</a>
+            <button class="close__options__container menu__items" id="footerOptionsContainerCloseButton">(close)</button>
+          </span>
+          <div>
+            <a class="hidden__item">Show Details</a>
+          </div>
+          <div class="description__container">
+            <p>
+            If you have received incorrect, damaged or faulty items, please provide details (including photos) within 14 days of purchase (domestic orders) or 21 days of purchase (international). we will verify whether you are entitled to a replacement and provide instructions accordingly. please contact our customer care team at hola@delsol-salon.com and include your order number. we don’t offer refunds or accept returns for change of mind.
+            <br>
+            <br>
+            <a class="link__title menu__items" id="mobileLink" href="mailto:info@aqua-mode.com">info@aqua-mode.com</a>
+            </p>
+          </div>
+        <!-- </div>
+      </span> -->
+      <!-- <div id="RefundsAndExchangesMobile"></div> -->
+    </div>
+
+    <div class="content__wrapper" id="ShippingPolicy">
+      <!-- <span>
+        <div> -->
+          <span class="footer__titles__wrapper">
+            <a class="product__title"><span id="mobileDot"> • </span>SHIPPING POLICY</a>
+            <button class="close__options__container menu__items" id="footerOptionsContainerCloseButton">(close)</button>
+          </span>
+          <div>
+            <a class="hidden__item">Show Details</a>
+          </div>
+          <div class="description__container">
+            <p>
+              Domestic within Aus
+              <br>
+              All domestic orders are processed with Standard or Express shipping within 48 hours of being placed.
+              <br>
+              <br>
+              Standard Shipping is $8 for all orders under $250 AUD and applied at checkout. Express Shipping is $12 AUD for all orders under $250 AUD and applied at checkout.
+              Orders over $250 AUD will receive free Express Shipping.
+              <br>
+              Express Shipping delivers between 1-4 Business days, as per AusPost delivery service.
+              Standard Shipping delivers between 4-8 Business days, as per AusPost delivery service.
+              <br>
+              <br>
+              Once dispatched you will receive an email confirmation with your order updates and tracking number via Australia Post. Please check your junk folder.
+              <br>
+              <br>
+              International
+              <br>
+              All international orders are shipped and processed through DHL, within 48 hours of being placed.
+              <br>
+              <br>
+              International shipping is a flat rate of $40 AUD and applied at checkout.
+              <br>
+              Delivery is determined by DHL once shipment is created and your orders has been dispatched, an email will be sent to you that will allow you to track your delivery.
+              Customs, Duties and taxes are calculated at checkout with shipping destination and order values.
+              All orders will be shipped on a DDp (Delivery Duty Paid) Basis.
+              Once Dispatched, you will receive an email confirmation with your Order update and tracking number (Waybill) via DHL Express. 
+            </p>
+          </div>
+        <!-- </div>
+      </span> -->
+      <div id="RefundsAndExchangesMobile"></div>
+    </div>
+
+    <div class="content__wrapper" id="About">
+      <img class="about__image" src="{{ '000011140002.png' | asset_url }}">
+      <!-- <span>
+        <div> -->
+          <span class="footer__titles__wrapper">
+            <a class="product__title"><span id="mobileDot"> • </span>ABOUT</a>
+            <button class="close__options__container menu__items" id="footerOptionsContainerCloseButton">(close)</button>
+          </span>
+          <div>
+            <a class="hidden__item">Show Details</a>
+          </div>
+          <div class="description__container">
+            <p>
+            aqua mode meets nostalgia head on, reviving the feelings of a young summer deep within us all. while many are inspired by escapism, we found the oasis in being still - of summer holidays spent along the australian coastline, licking ice-cream down your elbows in the copenhagen heat, the hot pavement of NYC, sprinkler system rainbows, bikini’s under everything, the aesthetic of always being somewhere between wet and dry. a project to escape minimalism in a time fraught by minimalism. bringing modernity and luxury to bold colour and a 90’s surf world aesthetic. hand-made in low quantities with recyclable packaging - all information cannot be found on the tag but rather online.
+              <br>
+              <br>
+            timeless pieces to take you back.
+            </p>
+          </div>
+        <!-- </div>
+      </span> -->
+      <div id="ShippingPolicyMobile"></div>
+    </div>
+
+    <div class="content__wrapper" id="Contact">
+      <div id="ContactMobile"></div>
+      <!-- <span>
+        <div> -->
+          <span class="footer__titles__wrapper">
+            <a class="product__title"><span id="mobileDot"> • </span>CONTACT</a>
+            <button class="close__options__container menu__items" id="footerOptionsContainerCloseButton">(close)</button>
+          </span>
+          <div>
+            <a class="hidden__item">Show Details</a>
+          </div>
+          <div class="description__container">
+            <p>
+              <a class="product__title">General Enquires</a>
+              <br>
+              <a class="link__title menu__items" id="mobileLink" href="mailto:info@aqua-mode.com">info@aqua-mode.com</a>
+              <br>
+              <br>
+              <a class="product__title">Instagram</a>
+              <br>
+              <a class="link__title menu__items" id="mobileLink" target="blank" href="https://www.instagram.com/aquamode_">@aquamode_</a>
+              <br>
+              <br>
+            </p>
+          </div>
+        <!-- </div>
+      </span> -->
+      <div id="HowtoCareMobile"></div>
+    </div>
+
+
+    <div class="content__wrapper" id="HowtoCare">
+      <!-- <span>
+        <div> -->
+          <span class="footer__titles__wrapper">
+            <a class="product__title"><span id="mobileDot"> • </span>HOW TO CARE</a>
+            <button class="close__options__container menu__items" id="footerOptionsContainerCloseButton">(close)</button>
+          </span>
+          <div>
+            <a class="hidden__item">Show Details</a>
+          </div>
+          <div class="description__container">
+            <p>
+              All our pieces are handmade using 100% hand-dyed cotton yarn. Due to this nature, please note that items are not all exactly the same, and you may find a small ‘knot’ or two on your bag, representing the end of a piece of yarn (crocheters out there - if you know you know!).
+              <br>
+              <br>
+              Whilst your piece will not need to be laundered frequently - it is important to know that it can be cleaned. Due to the natural fibres, the bag will slightly stretch if the contents is heavy - re-shrinking the item can happen in the drying process. Please note the following steps to cleaning your piece.
+              <br>
+              <br>
+              <br>
+              *please note: the heavier the contents, the more your crochet piece will drop. This also refers to dance floor visits (recommended, but please take care)
+              <br>
+              <br>
+              <br>
+              Option 1 - Dry-clean. Discuss with your local drycleaner the most effective way to treat your 100% cotton piece. Yarn will not leak colour.
+              <br>
+              <br>
+              Option 2 - Hand-wash. Fill a basin with cold water and add a natural wool-wash detergent. Gently swish crochet item in the soapy water - do not wring or scrub. Rinse in cold water and repeat this process until the item is free of soap. Gently squeeze remaining water and lay flat on a towel to dry, flipping half way through drying process.
+              <br>
+              <br>
+              Option 3 - Machine wash. Using a natural wool-wash detergent, machine-wash the item on a gentle cycle. Place into a laundry bag, and place in the dryer until just dry.”
+            </p>
+          </div>
+        <!-- </div>
+      </span> -->
+      <div id="AboutMobile"></div>
+    </div>
+</div>
+
+<div id="mobileScroller" class="scrollmenu">
+  <a class="mobile-scroller-buttons" href="#RefundsAndExchangesMobile" id="refundsButton">RETURNS & EXCHANGES</a>
+  <a class="mobile-scroller-buttons" href="#ShippingPolicyMobile" id="shippingButton">SHIPPING POLICY</a>
+  <a class="mobile-scroller-buttons" href="#AboutMobile" id="aboutButton">ABOUT</a>
+  <a class="mobile-scroller-buttons contact-mobile-scroll-title" href="#ContactMobile" id="contactButton">CONTACT</a>
+  <a class="mobile-scroller-buttons" href="#HowtoCareMobile" id="careButton">HOW TO CARE</a>
+</div>
+<!-- <div id="whiteBackground"></div> -->
+<div id="gradiantBox"></div>
+
+<hr class="footer__line" id="footerLine"></hr>
+
+<footer class="footer">
+  <div class="options__wrapper">
+    <a class="menu__items" href="/">aqua mode <span id="year"></span></a>
+  </div>
+  <div class="options__wrapper middle" id="desktopMenu">
+    <a onclick="openTab(event, 'RefundsAndExchanges')" class="menu__items content__buttons" id="footerRE">RETURNS & EXCHANGES</a>
+    <a onclick="openTab(event, 'ShippingPolicy')" class="menu__items content__buttons" id="footerSP">SHIPPING POLICY</a>
+    <a onclick="openTab(event, 'About')" class="menu__items content__buttons" id="footerAbout">ABOUT</a>
+    <a onclick="openTab(event, 'Contact')" class="menu__items content__buttons" id="footerContact">CONTACT</a>
+    <a onclick="openTab(event, 'HowtoCare')" class="menu__items content__buttons">HOW TO CARE</a>
+  </div>
+  <div class="options__wrapper middle" id="mobileMenu">
+    <a class="menu__items content__buttons" id="footerRE">RETURNS & EXCHANGES</a>
+    <a class="menu__items content__buttons" id="footerSP">SHIPPING POLICY</a>
+    <a class="menu__items content__buttons" id="footerAbout">ABOUT</a>
+    <a class="menu__items content__buttons" id="footerContact">CONTACT</a>
+    <a onclick="openTab(event, 'HowtoCare')" class="menu__items content__buttons">HOW TO CARE</a>
+  </div>
+  <div class="options__wrapper">
+    <div class="newsletter__footer">
+      <a class="menu__items content__buttons newsletter__header__mobile">NEWSLETTER</a>
+      {%- if section.settings.newsletter_enable -%}
+          {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form footer__form__post' -%}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <div class="newsletter-form__field-wrapper footer__form">
+              <div class="field">
+                <input
+                  id="NewsletterForm--{{ section.id }}"
+                  type="email"
+                  name="contact[email]"
+                  class="email_input"
+                  value="{{ form.email }}"
+                  aria-required="true"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  autocomplete="email"
+                  {% if form.errors %}
+                    autofocus
+                    aria-invalid="true"
+                    aria-describedby="ContactFooter-error"
+                  {% elsif form.posted_successfully? %}
+                    aria-describedby="ContactFooter-success"
+                  {% endif %}
+                  placeholder="{{ 'newsletter.label' | t }}"
+                  required
+                >
+                <button type="submit" class="newsletter-form__button field__button" name="commit" id="Subscribe" aria-label="{{ 'newsletter.button_label' | t }}">
+                  {% render 'icon-arrow' %}
+                </button>
+              </div>
+              {%- if form.errors -%}
+                <small class="newsletter-form__message form__message" id="ContactFooter-error">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
+              {%- endif -%}
+            </div>
+            {%- if form.posted_successfully? -%}
+              <h3 class="newsletter-form__message newsletter-form__message--success form__message" id="ContactFooter-success" tabindex="-1" autofocus>{% render 'icon-success' %}{{ 'newsletter.success' | t }}</h3>
+            {%- endif -%}
+          {%- endform -%}
+      {%- endif -%}
+    </div>
+  </div>
+</footer>
+
+<script src="{{ 'footer_options.js' | asset_url }}"></script>
+<script src="{{ 'year.js' | asset_url }}"></script>
+
+{% javascript %}
+  class LocalizationForm extends HTMLElement {
+    constructor() {
+      super();
+      this.elements = {
+        input: this.querySelector('input[name="locale_code"], input[name="country_code"]'),
+        button: this.querySelector('button'),
+        panel: this.querySelector('.disclosure__list-wrapper'),
+      };
+      this.elements.button.addEventListener('click', this.openSelector.bind(this));
+      this.elements.button.addEventListener('focusout', this.closeSelector.bind(this));
+      this.addEventListener('keyup', this.onContainerKeyUp.bind(this));
+
+      this.querySelectorAll('a').forEach(item => item.addEventListener('click', this.onItemClick.bind(this)));
+    }
+
+    hidePanel() {
+      this.elements.button.setAttribute('aria-expanded', 'false');
+      this.elements.panel.setAttribute('hidden', true);
+    }
+
+    onContainerKeyUp(event) {
+      if (event.code.toUpperCase() !== 'ESCAPE') return;
+
+      this.hidePanel();
+      this.elements.button.focus();
+    }
+
+    onItemClick(event) {
+      event.preventDefault();
+      const form = this.querySelector('form');
+      this.elements.input.value = event.currentTarget.dataset.value;
+      if (form) form.submit();
+    }
+
+    openSelector() {
+      this.elements.button.focus();
+      this.elements.panel.toggleAttribute('hidden');
+      this.elements.button.setAttribute('aria-expanded', (this.elements.button.getAttribute('aria-expanded') === 'false').toString());
+    }
+
+    closeSelector(event) {
+      const shouldClose = event.relatedTarget && event.relatedTarget.nodeName === 'BUTTON';
+      if (event.relatedTarget === null || shouldClose) {
+        this.hidePanel();
+      }
+    }
+  }
+
+  customElements.define('localization-form', LocalizationForm);
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "t:sections.footer.name",
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "t:sections.footer.blocks.link_list.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Quick links",
+          "label": "t:sections.footer.blocks.link_list.settings.heading.label"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "default": "footer",
+          "label": "t:sections.footer.blocks.link_list.settings.menu.label",
+          "info": "t:sections.footer.blocks.link_list.settings.menu.info"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:sections.footer.blocks.text.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Heading",
+          "label": "t:sections.footer.blocks.text.settings.heading.label"
+        },
+        {
+          "type": "richtext",
+          "id": "subtext",
+          "default": "<p>Share contact information, store details, and brand content with your customers.</p>",
+          "label": "t:sections.footer.blocks.text.settings.subtext.label"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "min": 50,
+          "max": 200,
+          "step": 5,
+          "unit": "px",
+          "label": "Image width",
+          "default": 100
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "Image alignment on large screen",
+          "options": [
+            {
+              "value": "",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "center"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "t:sections.all.colors.accent_1.label"
+        },
+        {
+          "value": "accent-2",
+          "label": "t:sections.all.colors.accent_2.label"
+        },
+        {
+          "value": "background-1",
+          "label": "t:sections.all.colors.background_1.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.all.colors.background_2.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.all.colors.inverse.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.all.colors.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__1.content",
+      "info": "t:sections.footer.settings.header__1.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "newsletter_enable",
+      "default": true,
+      "label": "t:sections.footer.settings.newsletter_enable.label"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_heading",
+      "default": "Subscribe to our emails",
+      "label": "t:sections.footer.settings.newsletter_heading.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__2.content",
+      "info": "t:sections.footer.settings.header__2.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social",
+      "default": false,
+      "label": "t:sections.footer.settings.show_social.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__3.content",
+      "info": "t:sections.footer.settings.header__4.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_country_selector",
+      "default": true,
+      "label": "t:sections.footer.settings.enable_country_selector.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__5.content",
+      "info": "t:sections.footer.settings.header__6.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_language_selector",
+      "default": true,
+      "label": "t:sections.footer.settings.enable_language_selector.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__7.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "payment_enable",
+      "default": true,
+      "label": "t:sections.footer.settings.payment_enable.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.spacing"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.footer.settings.margin_top.label",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "link_list"
+      },
+      {
+        "type": "text"
+      }
+    ]
+  }
+}
+{% endschema %}

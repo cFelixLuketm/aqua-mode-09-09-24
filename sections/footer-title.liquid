@@ -1,0 +1,31 @@
+
+{{ 'footer-title.css' | asset_url | stylesheet_tag }}
+
+  <div class="title__container" id="titleContainer">
+    <div class="logo_wrapper">
+      <a href="/">
+        <img class="logo" src="{{ section.settings.image | img_url: '1200x1200' }}" alt="Luminous 27">
+      </a>
+    </div>
+  </div>
+
+{% schema %}
+  {
+    "name": "footer title",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Footer title"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Footer title",
+        "settings": {
+        },
+        "blocks": []
+      }
+    ]
+  }
+{% endschema %}

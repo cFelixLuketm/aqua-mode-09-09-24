@@ -1,0 +1,161 @@
+
+
+p.label {
+  cursor: pointer;
+  color: rgba(62, 41, 7, 0.5);
+  transition: 0.5s;
+}
+
+p.label:hover {
+  color: rgba(62, 41, 7, 1);
+}
+
+.expanded__detail__list__items {
+  display: flex;
+  gap: 1rem;
+}
+
+#expandableDetailsOne {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  display: block;
+  opacity: 0;
+  height: 0px;
+  transition: all 0.25s;
+  pointer-events: none;
+}
+
+#expandableDetailsOne.active {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  opacity: 1;
+  height: auto;
+  pointer-events: all;
+}
+
+#expandableDetailsOnePointTwo {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  display: block;
+  opacity: 0;
+  height: 0px;
+  transition: all 0.25s;
+  pointer-events: none;
+}
+
+#expandableDetailsOnePointTwo.active {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  opacity: 1;
+  height: auto;
+  pointer-events: all;
+}
+
+#expandableDetailsOnePointThree {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  display: block;
+  opacity: 0;
+  height: 0px;
+  transition: all 0.25s;
+  pointer-events: none;
+}
+
+#expandableDetailsOnePointThree.active {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  opacity: 1;
+  height: auto;
+  pointer-events: all;
+}
+
+#expandableDetailsTwo {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  display: block;
+  opacity: 0;
+  height: 0px;
+  transition: all 0.25s;
+  pointer-events: none;
+}
+
+#expandableDetailsTwo.active {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  opacity: 1;
+  height: auto;
+  pointer-events: all;
+}
+
+#expandableDetailsThree {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  display: block;
+  opacity: 0;
+  height: 0px;
+  transition: all 0.25s;
+  pointer-events: none;
+}
+
+#expandableDetailsThree.active {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  opacity: 1;
+  height: auto;
+  pointer-events: all;
+}
+
+@media only screen and (max-width: 750px) {
+  #expandableDetailsOne {
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    display: block;
+    opacity: 1;
+    height: auto;
+    pointer-events: all;
+  }
+
+  #expandableDetailsOnePointTwo {
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    display: block;
+    opacity: 1;
+    height: auto;
+    pointer-events: all;
+  }
+
+  #expandableDetailsOnePointThree {
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    display: block;
+    opacity: 1;
+    height: auto;
+    pointer-events: all;
+  }
+
+  #expandableDetailsTwo {
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    display: block;
+    opacity: 1;
+    height: auto;
+    pointer-events: all;
+  }
+
+  #expandableDetailsThree {
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    display: block;
+    opacity: 1;
+    height: auto;
+    pointer-events: all;
+  }
+
+  p.how__to__use__link {
+    color: rgba(62, 41, 7, 1);
+  }
+
+  #hoverLink:hover {
+    color: rgba(62, 41, 7, 1);
+  }
+}

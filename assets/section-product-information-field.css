@@ -1,0 +1,77 @@
+
+#productInformationField {
+  width: 50vw;
+  height: 100vh;
+  background-color: #ffffff;
+  position: fixed;
+  transition: 0.5s;
+  left: 100vw;
+
+  display: flex;
+  justify-content: center;
+  z-index: 21;
+
+  position: fixed;
+  top: 0vh;
+}
+
+#productInformationField.active {
+  left: 50vw;
+}
+
+.title__container__detail__slider {
+  width: 24vw;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5vh;
+}
+
+div.product__tab__content {
+  display: none;
+}
+
+div.project__info__contentr {
+  width: 50vw;
+  height: 25vh;
+  padding-left: 13.5vw;
+  background-color: yellow;
+}
+
+.product__info__span {
+   position: sticky;
+   transition: 350ms ease-in;
+   width: 30vw;
+   width: 24vw;
+   margin-top: 12vh;
+   display: inline-block;
+   vertical-align: middle;
+}
+
+/* div.title__container {
+  width: 24vw;
+  display: flex;
+  justify-content: space-between;
+} */
+
+p.about__body__text {
+  width: 35vw;
+  font-size: 13px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+span.product__info__header {
+  display: flex;
+  justify-content: space-between;
+  width: 25vw;
+}
+
+img.size__guide__image {
+  width: 24vw;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
+.mobile__touch {
+  pointer-events: none;
+}

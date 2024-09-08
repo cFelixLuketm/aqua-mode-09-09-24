@@ -1,0 +1,175 @@
+/* <div class="mobile__menu__wrapper" id="mobileMenuWrapper">
+  <div class="mobile__text__wrapper">
+    <div class="search__wrapper">
+      <form id="seachForm" action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form mobile">
+        <div class="field__header">
+          <input class="search__input header__field__input"
+            id="Search-In-Modal"
+            type="search"
+            name="q"
+            value=""
+            placeholder="{{ 'general.search.search' | t }}"
+            {%- if settings.predictive_search_enabled -%}
+              role="combobox"
+              aria-expanded="false"
+              aria-owns="predictive-search-results-list"
+              aria-controls="predictive-search-results-list"
+              aria-haspopup="listbox"
+              aria-autocomplete="list"
+              autocorrect="off"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+            {%- endif -%}
+          >
+          <input type="hidden" name="options[prefix]" value="last">
+          <button class="search__button" aria-label="{{ 'general.search.search' | t }}">
+            <a class="search__enter__mobile">Enter</a>
+          </button>
+        </div>
+      </form>
+    </div>
+    <a id="skincareTitle" class="menu__items {% if handle == 'skincare' %} active__page__title {% endif %}" href="/collections/skincare" id="collectionOneTitle">
+      {{ collections['skincare'].title }}
+      <span>{{ collections['skincare'].products.count }}</span>
+    </a>
+    <a id="accessoriesTitle" class="menu__items {% if handle == 'accessories' %} active__page__title {% endif %}" href="/collections/accessories" id="collectionTwoTitle">
+      {{ collections['accessories'].title }}
+      <span>{{ collections['accessories'].products.count }}</span>
+    </a>
+  </div>
+</div> */
+
+div.subscribe {
+  width: 27.5vw;
+  height: 17.5vh;
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 0.5px solid #707070;
+  color: white;
+  position: fixed;
+  /* z-index: 4; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+ div#subscribeBox {
+   display: flex;
+   flex-direction: row-reverse;
+   opacity: 1;
+   pointer-events: all;
+   -moz-transition: all .2s ease-in;
+   -o-transition: all .2s ease-in;
+   -webkit-transition: all .2s ease-in;
+   transition: all .2s ease-in;
+   /* z-index: 5; */
+ }
+
+ div#subscribeBox.closed {
+   opacity: 0;
+   pointer-events: none;
+ }
+
+ div.quote__banner {
+   width: 100vw;
+   position: absolute;
+   display: flex;
+   justify-content: center;
+   bottom: -5vh;
+ }
+
+div.background {
+  z-index: -1;
+  width: 100vw;
+  height: 110vh;
+  position: absolute;
+  top: 0px;
+  overflow: hidden;
+}
+
+img.video {
+  z-index: -1;
+  width: 100%;
+  object-fit: cover;
+  -webkit-animation: 1s ease 0s normal forwards 1 fadein;
+  animation: 1s ease 0s normal forwards 1 fadein;
+}
+
+/* div.logo_wrapper {
+  position: fixed;
+  right: 2vw;
+  top: 1.5vw;
+  width: 20vw;
+} */
+
+div.logo_wrapper {
+    position: fixed;
+    right: 1.5vw;
+    top: 1.75vw;
+    width: 10vw;
+}
+
+img.logo {
+  width: 100%;
+}
+
+.mobile__quote {
+  display: none;
+}
+
+@media only screen and (max-width: 750px) {
+  /* div#subscribeBox {
+    display: none;
+  } */
+  /* div.quote__banner {
+    bottom: -10vh;
+  } */
+
+  div.subscribe {
+    width: 60vw;
+    height: 17.5vh;
+    background-color: rgba(255, 255, 255, 0.75);
+    border: 0.5px solid #707070;
+    color: white;
+    position: absolute;
+    /* z-index: 4; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  div.logo_wrapper {
+    position: relative;
+    right: 5vw;
+    top: 4vw;
+    width: 40vw;
+  }
+
+  div.background {
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 0px;
+    overflow: hidden;
+  }
+
+  .mobile__quote {
+    border-top: 0.5px solid rgba(62, 41, 7, 0.5);
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+  }
+
+  p.mobile__quote__text {
+    font-size: 17px;
+    color: rgba(62, 41, 7, 0.5);
+    padding-top: 1vh;
+  }
+
+  /* div.quote__banner {
+    display: none;
+  } */
+}

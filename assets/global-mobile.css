@@ -1,0 +1,117 @@
+
+
+@media only screen and (max-width: 750px) {
+
+  /* a#closeButtons {
+    font-size: 19px;
+  } */
+
+  html, body {
+    scroll-behavior: auto;
+    overscroll-behavior: none;
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  html.footeractive-mobile {
+    scroll-behavior: smooth;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  html {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  a {
+    font-size: 14px;
+    line-height: 19px
+  }
+
+  a,a:hover,a:click, a:visited{
+  border:none;
+  outline:none;
+  text-decoration:none;
+  color:inherit;
+  -webkit-tap-highlight-color: white;
+}
+
+  a.cookies__text {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  img.cookies__text {
+    padding-right: 0vw;
+  }
+
+  a.menu__items {
+    font-family: "BraziliaThreeCG";
+    font-size: 14px;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  a.product__text__title {
+    font-size: 13px;
+  }
+
+  a.product__title {
+    font-size: 14px;
+  }
+
+  a.product__price {
+    font-size: 14px;
+  }
+
+  a.product__text__price {
+    font-size: 13px;
+    width: 50vw;
+  }
+
+  p.product__description {
+    line-height: 17px
+  }
+
+  a.product_information_field_link {
+    text-decoration: underline;
+    /* position: absolute;
+    margin-top: 45vh; */
+  }
+
+  a.product_information_field_link:hover {
+    text-decoration: underline;
+    color: #000000;
+  }
+
+  /* input {
+    font-size: 14px;
+    line-height: 17px;
+  } */
+
+
+    /* div.flex__item__wrapper__middle {
+      display: none;
+    }
+
+    a.filter__button {
+      display: none;
+    } */
+}

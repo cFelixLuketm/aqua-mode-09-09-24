@@ -1,0 +1,66 @@
+{{ 'stories-page-text-layout.css' | asset_url | stylesheet_tag }}
+
+<style>
+  div.flex__item__wrapper__middle {
+    display: none;
+  }
+
+  a.filter__button {
+    display: none;
+  }
+
+  .footer {
+    z-index: 100;
+}
+
+@media (max-width: 700px) {
+  .footer {
+    border-top: 0.1rem solid rgba(var(--color-foreground), 0.00);
+    margin: 0px;
+    /* height: 65vh; */
+    width: 100vw;
+    position: relative;
+    z-index: 10;
+    background-color: white;
+  }
+}
+</style>
+
+<div class="stories_page_text_wrapper">
+  <div class="stories__text__wrapper">
+    <p class="stories__header__text">
+      {{ section.settings.titletext }}
+    </p>
+    <p class="stories__body__text">
+      {{ section.settings.bodytext }}
+    </p>
+  </div>
+</div>
+
+<script src="{{ 'scroll_function.js' | asset_url }}"></script>
+
+{% schema %}
+  {
+    "name": "Stories page text",
+    "settings": [
+      {
+        "type": "text",
+        "id": "titletext",
+        "label": "Stories page title"
+      },
+      {
+        "type": "text",
+        "id": "bodytext",
+        "label": "Stories page text"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Stories page text template",
+        "settings": {
+        },
+        "blocks": []
+      }
+    ]
+  }
+{% endschema %}

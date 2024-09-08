@@ -1,0 +1,144 @@
+{% comment %}
+  Renders a product card
+
+  Accepts:
+  - card_product: {Object} Product Liquid object (optional)
+  - media_aspect_ratio: {String} Size of the product image card. Values are "square" and "portrait". Default is "square" (optional)
+  - show_secondary_image: {Boolean} Show the secondary image on hover. Default: false (optional)
+  - show_vendor: {Boolean} Show the product vendor. Default: false
+  - show_rating: {Boolean} Show the product rating. Default: false
+  - extend_height: {Boolean} Card height extends to available container space. Default: true (optional)
+  - lazy_load: {Boolean} Image should be lazy loaded. Default: true (optional)
+  - show_quick_add: {Boolean} Show the quick add button.
+  - section_id: {String} The ID of the section that contains this card.
+  - horizontal_class: {Boolean} Add a card--horizontal class if set to true. Default: false
+
+  Usage:
+  {% render 'card-product', show_vendor: section.settings.show_vendor %}
+{% endcomment %}
+
+{%- if card_product and card_product != empty -%}
+  {%- liquid
+    assign ratio = 1
+    if card_product.featured_media and media_aspect_ratio == 'portrait'
+      assign ratio = 0.8
+    elsif card_product.featured_media and media_aspect_ratio == 'adapt'
+      assign ratio = card_product.featured_media.aspect_ratio
+    endif
+    if ratio == 0 or ratio == nil
+      assign ratio = 1
+    endif
+  -%}
+
+  <!-- <div class="collection__wrapper">
+      <div id="#productWrapper" class="individual__product__wrapper">
+        <a href="{{ product.url}}">
+          {% for image in card_product.images limit: 1 %}
+            {% if product.metafields.custom.hero_image != blank %}
+            <div class="image__container"
+                 style="background-image: url({{ product.metafields.custom.hero_image | img_url: '1200x1200' }})"
+            >
+              <img class="featured__image"
+                   src="{{ image.src | img_url: '1200x1200' }}"
+                   onmouseover="this.style.opacity='0';"
+                   onmouseout="this.style.opacity='1'"
+                   alt="{{product.metafields.custom.hero_image.alt}}"
+              />
+            </div>
+            {% elsif product.metafields.custom.hero_image == blank %}
+            <div class="image__container">
+              <img class="featured__image" src="{{ image.src | img_url: '1200x1200' }}" alt="{{product.featured_image.alt}}" alt="" />
+            </div>
+            {% endif %}
+          {% endfor %}
+        </a>
+        <div class="product__text">
+          <a class="product__text__titles">{{ product.title }}</a>
+          <div class="dots_price_wrapper">
+            <div class="variant_dot_holder">
+            {% for variant in product.variants %}
+              {% assign color = variant.metafields.custom.color %}
+                {% if color != blank %}
+                  <div
+                       id="materialVariantDots"
+                       class="variant__color"
+                       for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                       style="background-color: {{variant.metafields.custom.color}};"
+                       >
+                  </div>
+              {% endif %}
+            {% endfor %}
+            </div>
+            <a class="product__text__titles">{{ product.price | money_without_currency }}</a>
+          </div>
+        </div>
+      </div>
+  </div> -->
+
+
+  <!-- <div class="card-wrapper product-card-wrapper underline-links-hover"> -->
+    {%- if card_product.featured_media -%}
+    <div id="productWrapper" class="individual__product__wrappers">
+      <a href="{{ card_product.url}}">
+        {% for image in card_product.images limit: 1 %}
+          {% if card_product.metafields.custom.hero_image != blank %}
+          <div class="image__container"
+               style="background-image: url({{ card_product.metafields.custom.hero_image | img_url: '1200x1200' }})"
+          >
+            <img class="featured__image"
+                 src="{{ image.src | img_url: '1200x1200' }}"
+                 onmouseover="this.style.opacity='0';"
+                 onmouseout="this.style.opacity='1'"
+                 alt="{{card_product.metafields.custom.hero_image.alt}}"
+            />
+          </div>
+          {% elsif card_product.metafields.custom.hero_image == blank %}
+          <div class="image__container">
+            <img class="featured__image" src="{{ image.src | img_url: '1200x1200' }}" alt="{{card_product.featured_image.alt}}" alt="" />
+          </div>
+          {% endif %}
+        {% endfor %}
+      </a>
+
+      <div class="product__text">
+        <a class="product__text__titles">{{ card_product.title | escape }}</a>
+        <div class="dots_price_wrapper">
+          <div class="variant_dot_holder">
+          {% for variant in card_product.variants %}
+            {% assign color = variant.metafields.custom.color %}
+              {% if color != blank %}
+                <div
+                     id="materialVariantDots"
+                     class="variant__color"
+                     for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                     style="background-color: {{variant.metafields.custom.color}};"
+                     >
+                </div>
+            {% endif %}
+          {% endfor %}
+          </div>
+          <a class="product__text__titles">{{ card_product.price | money_without_trailing_zeros }}</a>
+        </div>
+      </div>
+    </div>
+    {%- endif -%}
+  <!-- </div> -->
+<!-- {%- else -%}
+{%- endif -%} -->
+
+
+<script>
+  function showTitleText(element){
+    const materialTexts = document.querySelectorAll('#message');
+    materialTexts.forEach(materialText => {
+        materialText.innerHTML = element.title;
+    })
+  }
+
+  function hideTitleText(element){
+    const materialTexts = document.querySelectorAll('#message');
+    materialTexts.forEach(materialText => {
+        materialText.innerHTML = "";
+    })
+  }
+</script>

@@ -1,0 +1,132 @@
+
+
+div.collection__wrapper {
+  top: 10vh;
+  left: 0;
+  width: calc(97.3vw);
+  margin-bottom: 3vh;
+  /* height: calc(100vh); */
+  margin-left: 1.5vw;
+  margin-top: 12vh;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3vh 1vw;
+  flex-direction: row;
+  margin-bottom: 15vh;
+}
+
+div.second__row {
+  margin-top: 0vh;
+  margin-bottom: 20vh;
+  border-top: 0.5px solid rgba(62, 41, 7, 0.5);
+}
+
+div.individual__product__wrapper {
+  width: 31.75vw;
+  height: calc(80vh);
+}
+
+div.image__container {
+  width: 31.75vw;
+  height: calc(75vh);
+  overflow: hidden;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  -webkit-background-origin:border;
+  -webkit-animation: 1s ease-in-out 0s normal forwards 1 fadein;
+  animation: 1s ease-in-out 0s normal forwards 1 fadein;
+}
+
+@keyframes fadein{
+  0% { opacity:0; }
+  66% { opacity:0; }
+  100% { opacity:1; }
+}
+
+img.featured__image {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  padding: 0px;
+  position: relative;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  object-fit: cover;
+}
+
+
+div.product__text {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5vh;
+}
+
+div.dots_price_wrapper {
+  display: flex;
+  gap: 4rem;
+}
+
+div.variant_dot_holder {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: -1.5px;
+}
+
+div.variant__color {
+  display: flex;
+  text-align: center;
+  cursor: pointer;
+  width: 11px;
+  height: 11px;
+  border-radius: 7.5px;
+  margin-top: 0px;
+}
+
+@media only screen and (max-width: 750px) {
+
+  div.collection__wrapper {
+    top: 10vh;
+    left: 0;
+    width: calc(98vw);
+    height: inherit;
+    margin-left: 0vw;
+    margin-top: 10vh;
+    margin-bottom: 0vh;
+    display: block;
+    gap: 0vw;
+    flex-direction: row;
+  }
+
+  div.second__row {
+    margin-top: 0vh;
+    margin-bottom: 0vh;
+    border-top: 0px solid rgba(62, 41, 7, 0.5);
+    margin-bottom: 0vh;
+  }
+
+  div.individual__product__wrapper {
+    width: 100vw;
+    height: calc(83vh);
+  }
+
+  div.image__container {
+    width: 100vw;
+    height: calc(75vh);
+  }
+
+  img.featured__image {
+    pointer-events: none;
+  }
+
+  div.product__text {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5vh;
+    margin-left: 3.5vw;
+    margin-right: 3.5vw;
+  }
+
+}
