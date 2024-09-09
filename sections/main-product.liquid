@@ -388,7 +388,21 @@
                </div>
              {%- endfor -%}
 
+
+
              <script>
+              const sizeLabels = document.querySelectorAll(".size_label");
+              console.log(sizeLabels)
+
+              sizeLabels.forEach(sizeLabel => {
+                sizeLabel.addEventListener("click", function() {
+                  sizeLabels.forEach(sizeLabel => {
+                      sizeLabel.classList.remove("active");
+                  })
+                  event.currentTarget.classList.add("active");
+                })
+              })
+
 
              </script>
 

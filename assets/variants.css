@@ -111,13 +111,16 @@ label.morello {
 
 
 .product-form__input input[type="radio"] + .size_label {
-  border: 0px solid #f4f5ff;
+  /* border: 0px solid #f4f5ff; */
   width: 30px;
   height: 18px;
   border-radius: 0px;
   padding: 0;
   margin-right: 15px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-form__input input[type="radio"]:hover + .size_label {
@@ -125,9 +128,23 @@ label.morello {
   text-decoration: none;
 }
 
-label#variantTextDots.hovered {
+.size_label {
+  border: 0px solid #b9b3a5;
+}
+
+.size_label.active {
   border: 0.75px solid #b9b3a5;
 }
+
+/* label#variantTextDots.hovered {
+  border: 0.75px solid #b9b3a5;
+} */
+
+/* .product-form__input input[type="radio"]:checked + .color-swatch,
+.product-form__input input[type="radio"]:hover + .color-swatch {
+  border: 0.75px solid #000000;
+  text-decoration: none;
+} */
 
 
 div#variantsMobile {

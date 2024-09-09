@@ -2,7 +2,8 @@
 div.individual__product__wrappers {
   width: 31.3vw;
   /* margin-top: 3vh; */
-  height: calc(74vh);
+  /* height: calc(74vh); */
+  height: auto;
   cursor: pointer;
   /* display: flex;
   flex-wrap: wrap; */

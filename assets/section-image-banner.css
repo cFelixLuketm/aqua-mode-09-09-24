@@ -205,6 +205,31 @@ footer.footer {
   width: 50%;
 }
 
+.banner__media-half {
+  width: 50%;
+}
+
+.banner__media-half_desktop {
+  width: 100%;
+}
+
+.banner__media-half_mobile {
+  width: 100%;
+  display: none;
+}
+
+@media only screen and (max-width: 750px) {
+  .banner__media-half_desktop {
+    width: 100%;
+    display: none;
+  }
+  
+  .banner__media-half_mobile {
+    width: 100%;
+    display: block;
+  }
+}
+
 .banner__media-half + .banner__media-half {
   right: 0;
   left: auto;
