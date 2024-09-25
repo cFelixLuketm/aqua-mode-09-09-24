@@ -101,6 +101,12 @@
                           {{ value }}
                         </a>
                       </label>
+                      {% elsif value == '36' %}
+                        <label id="variantTextDots" class="size_label" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" data-option="{{ value }}">
+                          <a id="variantTextSize" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+                            {{ value }}
+                          </a>
+                        </label>
                       {% elsif value == '37' %}
                         <label id="variantTextDots" class="size_label" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" data-option="{{ value }}">
                           <a id="variantTextSize" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
@@ -120,6 +126,12 @@
                           </a>
                         </label>
                       {% elsif value == '40' %}
+                        <label id="variantTextDots" class="size_label" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" data-option="{{ value }}">
+                          <a id="variantTextSize" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+                            {{ value }}
+                          </a>
+                        </label>
+                      {% elsif value == '41' %}
                         <label id="variantTextDots" class="size_label" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" data-option="{{ value }}">
                           <a id="variantTextSize" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
                             {{ value }}
