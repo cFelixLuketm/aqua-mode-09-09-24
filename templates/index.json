@@ -1,1 +1,57 @@
-{"sections":{"image_banner":{"type":"image-banner","settings":{"image":"shopify:\/\/shop_images\/20240902_AQUAMODE_ATHENS_10140_1.jpg","video_background":false,"image_overlay_opacity":0,"image_height":"medium","adapt_height_first_image":false,"desktop_content_position":"middle-center","show_text_box":true,"desktop_content_alignment":"center","color_scheme":"background-1","mobile_content_alignment":"center","stack_images_on_mobile":true,"show_text_below":true}},"newsletter":{"type":"newsletter","settings":{"color_scheme":"background-1","full_width":true,"padding_top":40,"padding_bottom":52}},"main_homepage":{"type":"main-homepage","settings":{"color_scheme":"background-1","newsletter_enable":true,"newsletter_heading":"Welcome to Del Sol Salon","show_social":false,"enable_country_selector":true,"enable_language_selector":true,"payment_enable":true}}},"order":["image_banner","newsletter","main_homepage"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify://shop_images/20240902_AQUAMODE_ATHENS_10029.jpg",
+        "image_2": "shopify://shop_images/20240902_AQUAMODE_ATHENS_9920.jpg",
+        "video_background": false,
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "adapt_height_first_image": false,
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "main_homepage": {
+      "type": "main-homepage",
+      "settings": {
+        "color_scheme": "background-1",
+        "newsletter_enable": true,
+        "newsletter_heading": "welcome to aqua mode",
+        "show_social": false,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "newsletter",
+    "main_homepage"
+  ]
+}
